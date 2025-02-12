@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" prefHeight="400.0" prefWidth="600.0" style="-fx-background-radius: 30; -fx-opacity: 50;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.LoginController">
+   <top>
+      <HBox alignment="CENTER_RIGHT" spacing="10" style="-fx-background-color: transparent; -fx-padding: 5 10 5 10;">
+         <children>
+            <!-- Minimize Button -->
+            <Button onAction="#minimizeWindow" style="-fx-background-color: transparent; -fx-font-size: 16; -fx-text-fill: black;" text="-">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+
+            <!-- Maximize Button -->
+            <Button onAction="#maximizeWindow" style="-fx-background-color: transparent; -fx-font-size: 16; -fx-text-fill: black;" text="□">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+
+            <!-- Close Button -->
+            <Button onAction="#closeWindow" style="-fx-background-color: transparent; -fx-font-size: 16; -fx-text-fill: black;" text="X">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+         </children>
+      </HBox>
+
+   </top>
+   <center>
+      <VBox alignment="CENTER" maxWidth="300.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Login">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="emailField" onAction="#switchFocusToPassword" promptText="Email">
+               <VBox.margin>
+                  <Insets right="30.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox alignment="CENTER" maxHeight="50.0" maxWidth="300.0" minHeight="50.0" minWidth="-Infinity" prefHeight="50.0" prefWidth="200.0" VBox.vgrow="NEVER">
+               <children>
+                  <TextField fx:id="textPasswordField" maxWidth="300.0" onAction="#onLoginButtonClick" visible="false" HBox.hgrow="ALWAYS" />
+                  <PasswordField fx:id="passwordField" maxWidth="300.0" onAction="#onLoginButtonClick" promptText="Password" HBox.hgrow="ALWAYS" />
+                  <ImageView fx:id="showPasswordIV" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#switchShowPassword" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../media/show.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Button fx:id="loginButton" maxHeight="30.0" maxWidth="120.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: blue; -fx-background-radius: 20; -fx-opacity: 70;" text="Login" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <Label fx:id="statusLabel" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </bottom>
+</BorderPane>
